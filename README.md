@@ -1,54 +1,29 @@
-## LoopBack Sample Application
+## LoopBack / Apidocs connector template
 
-This example application was scaffolded with the help of `slc loopback` (which is 
-equivalent to `yo loopback`. Refer to the section 
-[Building from scratch](building-from-scratch) below for more details.
+This is an example that builds on top of [loopback-example-app](https://github.com/strongloop/loopback-example-app) 
+adding an apidocs template to use Loopback's raw resources to create an ApiDocs page.
 
-### i-Car Rentals Corp
 
-i-Car is an (imaginary) car rental dealer with locations in major cities around
-the world. They need to replace their existing desktop reservation system with
-a new mobile app.
+### Removal of /client 
 
-### End user experience
+The original [loopback-example-app](https://github.com/strongloop/loopback-example-app) includes an example client 
+webpage, but since it just an example, I decided to use that folder as the targer for ApiDocs files and scripts. 
 
-The app enables customers to find the closest available cars using the i-Car app
-on a smartphone. The app shows a map of nearby rental locations and lists
-available cars in the area shown on the map. In addition, the customer can
-filter the list of cars by make, model, class, year and color. The customer can
-then select the desired car and reserve it via the app. If not logged in the app
-prompts the customer to login or register. The app indicates if the desired car
-is available and if so, confirms the reservation.
-
-### Features
-
- - Authenticates and verifies customers' identities.
- - Securely exposes inventory data to mobile applications.
- - Allow customers to find cars available **within a specific area**.
- - Allow customers to reserve cars for rental.
-
-### REST APIs
-
- - `/cars` exposes a queryable (filter, sort) collection of available cars
-    over HTTP / JSON
- - `/cars/nearby?&lat=...&long=... or ?zip=...` returns a filtered set of
-    available cars nearby the requesting user
- - `/cars/nearby?id=24&zip=94555` returns nearby cars of id 24.
- - `/cars/:id` returns a specific car from the inventory, with specific
-    pricing and images
- - `/users/login` allows a customer to login
- - `/users/logout` allows a customer to logout
+That way, there's no need to touch server.js. Instead, the app's fallback path will show the apidocs generated
+files when you request http://localhost:3000/.
 
 ### Configure and run the application
 
 Start the application back-end by running the following command:
 
 ```
-$ node .
+$ sudo npm install -g apidoc
+$ apidoc  apidoc  -o client/ -t apidoc_template/
+$ slc run .
 ```
 
 Now open your browser and point it to
-[http://127.0.0.1:3000](http://127.0.0.1:3000) to access the application UI.
+[http://127.0.0.1:3000](http://127.0.0.1:3000) to access ApiDocs generated UI.
 
 #### Configuration
 
