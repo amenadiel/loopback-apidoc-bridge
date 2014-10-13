@@ -1,0 +1,331 @@
+{
+  "apiVersion": "3.0.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000/api",
+  "resourcePath": "/resources",
+  "apis": [
+    {
+      "path": "/inventory",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Inventory_create",
+          "type": "Inventory",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "Model instance data",
+              "type": "Inventory",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Create a new instance of the model and persist it into the data source",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Inventory_upsert",
+          "type": "Inventory",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "Model instance data",
+              "type": "Inventory",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update an existing model instance or insert a new one into the data source",
+          "notes": ""
+        },
+        {
+          "method": "GET",
+          "nickname": "Inventory_find",
+          "type": "array",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "description": "Filter defining fields, where, orderBy, offset, and limit",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find all instances of the model matched by filter from the data source",
+          "notes": "",
+          "items": {
+            "type": "Inventory"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/inventory/{id}/exists",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Inventory_exists",
+          "type": "boolean",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Check whether a model instance exists in the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/inventory/{id}",
+      "operations": [
+        {
+          "method": "HEAD",
+          "nickname": "Inventory_exists",
+          "type": "boolean",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Check whether a model instance exists in the data source",
+          "notes": ""
+        },
+        {
+          "method": "GET",
+          "nickname": "Inventory_findById",
+          "type": "Inventory",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find a model instance by id from the data source",
+          "notes": ""
+        },
+        {
+          "method": "DELETE",
+          "nickname": "Inventory_deleteById",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Delete a model instance by id from the data source",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Inventory_prototype_updateAttributes",
+          "type": "Inventory",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "An object of model property name/value pairs",
+              "type": "Inventory",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "PersistedModel id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update attributes for a model instance and persist it into the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/inventory/findOne",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Inventory_findOne",
+          "type": "Inventory",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "description": "Filter defining fields, where, orderBy, offset, and limit",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find first instance of the model matched by filter from the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/inventory/update",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Inventory_updateAll",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "An object of model property name/value pairs",
+              "type": "Inventory",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update instances of the model matched by where from the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/inventory/count",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Inventory_count",
+          "type": "number",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Count instances of the model matched by where from the data source",
+          "notes": "",
+          "format": "double"
+        }
+      ]
+    }
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "models": {
+    "Inventory": {
+      "id": "Inventory",
+      "properties": {
+        "id": {
+          "type": "string",
+          "id": true,
+          "required": true,
+          "length": 20,
+          "oracle": {
+            "columnName": "ID",
+            "dataType": "VARCHAR2",
+            "dataLength": 20,
+            "nullable": "N"
+          }
+        },
+        "productId": {
+          "type": "string",
+          "required": true,
+          "length": 20,
+          "oracle": {
+            "columnName": "PRODUCT_ID",
+            "dataType": "VARCHAR2",
+            "dataLength": 20,
+            "nullable": "N"
+          }
+        },
+        "locationId": {
+          "type": "string",
+          "required": true,
+          "length": 20,
+          "oracle": {
+            "columnName": "LOCATION_ID",
+            "dataType": "VARCHAR2",
+            "dataLength": 20,
+            "nullable": "N"
+          }
+        },
+        "available": {
+          "type": "number",
+          "length": 22,
+          "oracle": {
+            "columnName": "AVAILABLE",
+            "dataType": "NUMBER",
+            "dataLength": 22,
+            "nullable": "Y"
+          },
+          "format": "double"
+        },
+        "total": {
+          "type": "number",
+          "length": 22,
+          "oracle": {
+            "columnName": "TOTAL",
+            "dataType": "NUMBER",
+            "dataLength": 22,
+            "nullable": "Y"
+          },
+          "format": "double"
+        }
+      },
+      "required": [
+        "id",
+        "productId",
+        "locationId"
+      ]
+    }
+  }
+}

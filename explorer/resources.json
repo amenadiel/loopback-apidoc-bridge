@@ -1,0 +1,22 @@
+{
+  "swaggerVersion": "1.2",
+  "apiVersion": "3.0.0",
+  "apis": [
+    {
+      "path": "/Cars"
+    },
+    {
+      "path": "/Customers"
+    },
+    {
+      "path": "/inventory"
+    },
+    {
+      "path": "/Locations"
+    },
+    {
+      "path": "/notes"
+    }
+  ],
+  "info": {}
+}

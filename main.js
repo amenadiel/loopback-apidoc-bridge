@@ -51,16 +51,6 @@ require([
 
 	var api = [];
 
-	/**
-	 * "type": "post",
-		"url": "/v1/Datasets",
-		"title": "Create new Dataset",
-		"name": "CreateDataset",
-		"group": "Datasets",
-		"version": "0.0.0",
-		"filename": "common/models/dataset.js"
-	 */
-
 
 	$.urlParam = function (name) {
 		var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
@@ -89,7 +79,7 @@ require([
 	if (apiProject.template.withGenerator == null) apiProject.template.withGenerator = true;
 
 	$.ajax({
-		url: 'http://localhost:3000/explorer/resources',
+		url: '/explorer/resources.json',
 		dataType: 'json'
 	}).done(function (resources) {
 
@@ -99,7 +89,7 @@ require([
 		var EndointArray = []
 		_.each(models, function (model) {
 			var endpoint = $.ajax({
-				url: 'http://localhost:3000/explorer/resources' + model,
+				url: '/explorer' + model + '.json',
 				dataType: 'json'
 			});
 			EndointArray.push(endpoint);

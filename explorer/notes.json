@@ -1,0 +1,277 @@
+{
+  "apiVersion": "3.0.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000/api",
+  "resourcePath": "/resources",
+  "apis": [
+    {
+      "path": "/notes",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Note_create",
+          "type": "Note",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "Model instance data",
+              "type": "Note",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Create a new instance of the model and persist it into the data source",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Note_upsert",
+          "type": "Note",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "Model instance data",
+              "type": "Note",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update an existing model instance or insert a new one into the data source",
+          "notes": ""
+        },
+        {
+          "method": "GET",
+          "nickname": "Note_find",
+          "type": "array",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "description": "Filter defining fields, where, orderBy, offset, and limit",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find all instances of the model matched by filter from the data source",
+          "notes": "",
+          "items": {
+            "type": "Note"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/notes/{id}/exists",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Note_exists",
+          "type": "boolean",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Check whether a model instance exists in the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/notes/{id}",
+      "operations": [
+        {
+          "method": "HEAD",
+          "nickname": "Note_exists",
+          "type": "boolean",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Check whether a model instance exists in the data source",
+          "notes": ""
+        },
+        {
+          "method": "GET",
+          "nickname": "Note_findById",
+          "type": "Note",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find a model instance by id from the data source",
+          "notes": ""
+        },
+        {
+          "method": "DELETE",
+          "nickname": "Note_deleteById",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Delete a model instance by id from the data source",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Note_prototype_updateAttributes",
+          "type": "Note",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "An object of model property name/value pairs",
+              "type": "Note",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "PersistedModel id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update attributes for a model instance and persist it into the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/notes/findOne",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Note_findOne",
+          "type": "Note",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "description": "Filter defining fields, where, orderBy, offset, and limit",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find first instance of the model matched by filter from the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/notes/update",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Note_updateAll",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "An object of model property name/value pairs",
+              "type": "Note",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update instances of the model matched by where from the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/notes/count",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Note_count",
+          "type": "number",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Count instances of the model matched by where from the data source",
+          "notes": "",
+          "format": "double"
+        }
+      ]
+    }
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "models": {
+    "Note": {
+      "id": "Note",
+      "properties": {
+        "id": {
+          "type": "number",
+          "id": 1,
+          "generated": true,
+          "format": "double"
+        }
+      },
+      "required": []
+    }
+  }
+}

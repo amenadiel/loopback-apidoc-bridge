@@ -1,0 +1,653 @@
+{
+  "apiVersion": "3.0.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000/api",
+  "resourcePath": "/resources",
+  "apis": [
+    {
+      "path": "/Customers/login",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Customer_login",
+          "type": "object",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "credentials",
+              "type": "object",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "query",
+              "name": "include",
+              "description": "Related objects to include in the response. See the description of return value for more details.",
+              "type": "string",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Login a user with username/email and password",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/logout",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Customer_logout",
+          "type": "void",
+          "parameters": [],
+          "responseMessages": [],
+          "summary": "Logout a user with access token",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/confirm",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Customer_confirm",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "uid",
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "query",
+              "name": "token",
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "query",
+              "name": "redirect",
+              "type": "string",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Confirm a user registration with email verification token",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/reset",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Customer_resetPassword",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "options",
+              "type": "object",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Reset password for a user with email",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/{id}/accessTokens/{fk}",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Customer_prototype___findById__accessTokens",
+          "type": "AccessToken",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "fk",
+              "description": "Foreign key for accessTokens",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "User id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find a related item by id for accessTokens",
+          "notes": ""
+        },
+        {
+          "method": "DELETE",
+          "nickname": "Customer_prototype___destroyById__accessTokens",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "fk",
+              "description": "Foreign key for accessTokens",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "User id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Delete a related item by id for accessTokens",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Customer_prototype___updateById__accessTokens",
+          "type": "AccessToken",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "fk",
+              "description": "Foreign key for accessTokens",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "data",
+              "type": "AccessToken",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "User id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update a related item by id for accessTokens",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/{id}/accessTokens",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Customer_prototype___get__accessTokens",
+          "type": "array",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "User id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Queries accessTokens of Customer.",
+          "notes": "",
+          "items": {
+            "type": "AccessToken"
+          }
+        },
+        {
+          "method": "POST",
+          "nickname": "Customer_prototype___create__accessTokens",
+          "type": "AccessToken",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "type": "AccessToken",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "User id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Creates a new instance in accessTokens of this model.",
+          "notes": ""
+        },
+        {
+          "method": "DELETE",
+          "nickname": "Customer_prototype___delete__accessTokens",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "User id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Deletes all accessTokens of this model.",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/{id}/accessTokens/count",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Customer_prototype___count__accessTokens",
+          "type": "number",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "User id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Counts accessTokens of Customer.",
+          "notes": "",
+          "format": "double"
+        }
+      ]
+    },
+    {
+      "path": "/Customers",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Customer_create",
+          "type": "Customer",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "Model instance data",
+              "type": "Customer",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Create a new instance of the model and persist it into the data source",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Customer_upsert",
+          "type": "Customer",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "Model instance data",
+              "type": "Customer",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update an existing model instance or insert a new one into the data source",
+          "notes": ""
+        },
+        {
+          "method": "GET",
+          "nickname": "Customer_find",
+          "type": "array",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "description": "Filter defining fields, where, orderBy, offset, and limit",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find all instances of the model matched by filter from the data source",
+          "notes": "",
+          "items": {
+            "type": "Customer"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/Customers/{id}/exists",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Customer_exists",
+          "type": "boolean",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Check whether a model instance exists in the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/{id}",
+      "operations": [
+        {
+          "method": "HEAD",
+          "nickname": "Customer_exists",
+          "type": "boolean",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Check whether a model instance exists in the data source",
+          "notes": ""
+        },
+        {
+          "method": "GET",
+          "nickname": "Customer_findById",
+          "type": "Customer",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find a model instance by id from the data source",
+          "notes": ""
+        },
+        {
+          "method": "DELETE",
+          "nickname": "Customer_deleteById",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Delete a model instance by id from the data source",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Customer_prototype_updateAttributes",
+          "type": "Customer",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "An object of model property name/value pairs",
+              "type": "Customer",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "User id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update attributes for a model instance and persist it into the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/findOne",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Customer_findOne",
+          "type": "Customer",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "description": "Filter defining fields, where, orderBy, offset, and limit",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find first instance of the model matched by filter from the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/update",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Customer_updateAll",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "An object of model property name/value pairs",
+              "type": "Customer",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update instances of the model matched by where from the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Customers/count",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Customer_count",
+          "type": "number",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Count instances of the model matched by where from the data source",
+          "notes": "",
+          "format": "double"
+        }
+      ]
+    }
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "models": {
+    "Customer": {
+      "id": "Customer",
+      "properties": {
+        "id": {
+          "type": "string",
+          "id": true,
+          "length": 20,
+          "oracle": {
+            "columnName": "ID",
+            "dataType": "VARCHAR2",
+            "dataLength": 20,
+            "nullable": "N"
+          }
+        },
+        "name": {
+          "type": "string",
+          "length": 40,
+          "oracle": {
+            "columnName": "NAME",
+            "dataType": "VARCHAR2",
+            "dataLength": 40,
+            "nullable": "Y"
+          }
+        },
+        "realm": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "credentials": {
+          "type": "object"
+        },
+        "challenges": {
+          "type": "object"
+        },
+        "email": {
+          "type": "string",
+          "required": true
+        },
+        "emailVerified": {
+          "type": "boolean"
+        },
+        "verificationToken": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string",
+          "format": "date"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "id",
+        "email"
+      ]
+    },
+    "AccessToken": {
+      "id": "AccessToken",
+      "properties": {
+        "id": {
+          "type": "string",
+          "id": true
+        },
+        "ttl": {
+          "type": "number",
+          "ttl": true,
+          "format": "double",
+          "defaultValue": 1209600
+        },
+        "created": {
+          "type": "string",
+          "format": "date"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "apiVersion": "3.0.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000/api",
+  "resourcePath": "/resources",
+  "apis": [
+    {
+      "path": "/Locations/{id}/inventory/{fk}",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Location_prototype___findById__inventory",
+          "type": "Inventory",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "fk",
+              "description": "Foreign key for inventory",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Location id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find a related item by id for inventory",
+          "notes": ""
+        },
+        {
+          "method": "DELETE",
+          "nickname": "Location_prototype___destroyById__inventory",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "fk",
+              "description": "Foreign key for inventory",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Location id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Delete a related item by id for inventory",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Location_prototype___updateById__inventory",
+          "type": "Inventory",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "fk",
+              "description": "Foreign key for inventory",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "data",
+              "type": "Inventory",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Location id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update a related item by id for inventory",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Locations/{id}/inventory",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Location_prototype___get__inventory",
+          "type": "array",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Location id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Queries inventory of Location.",
+          "notes": "",
+          "items": {
+            "type": "Inventory"
+          }
+        },
+        {
+          "method": "POST",
+          "nickname": "Location_prototype___create__inventory",
+          "type": "Inventory",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "type": "Inventory",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Location id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Creates a new instance in inventory of this model.",
+          "notes": ""
+        },
+        {
+          "method": "DELETE",
+          "nickname": "Location_prototype___delete__inventory",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Location id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Deletes all inventory of this model.",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Locations/{id}/inventory/count",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Location_prototype___count__inventory",
+          "type": "number",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Location id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Counts inventory of Location.",
+          "notes": "",
+          "format": "double"
+        }
+      ]
+    },
+    {
+      "path": "/Locations",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Location_create",
+          "type": "Location",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "Model instance data",
+              "type": "Location",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Create a new instance of the model and persist it into the data source",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Location_upsert",
+          "type": "Location",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "Model instance data",
+              "type": "Location",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update an existing model instance or insert a new one into the data source",
+          "notes": ""
+        },
+        {
+          "method": "GET",
+          "nickname": "Location_find",
+          "type": "array",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "description": "Filter defining fields, where, orderBy, offset, and limit",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find all instances of the model matched by filter from the data source",
+          "notes": "",
+          "items": {
+            "type": "Location"
+          }
+        }
+      ]
+    },
+    {
+      "path": "/Locations/{id}/exists",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Location_exists",
+          "type": "boolean",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Check whether a model instance exists in the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Locations/{id}",
+      "operations": [
+        {
+          "method": "HEAD",
+          "nickname": "Location_exists",
+          "type": "boolean",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Check whether a model instance exists in the data source",
+          "notes": ""
+        },
+        {
+          "method": "GET",
+          "nickname": "Location_findById",
+          "type": "Location",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find a model instance by id from the data source",
+          "notes": ""
+        },
+        {
+          "method": "DELETE",
+          "nickname": "Location_deleteById",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Model id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Delete a model instance by id from the data source",
+          "notes": ""
+        },
+        {
+          "method": "PUT",
+          "nickname": "Location_prototype_updateAttributes",
+          "type": "Location",
+          "parameters": [
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "An object of model property name/value pairs",
+              "type": "Location",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "description": "Location id",
+              "type": "any",
+              "required": true,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update attributes for a model instance and persist it into the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Locations/findOne",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Location_findOne",
+          "type": "Location",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "filter",
+              "description": "Filter defining fields, where, orderBy, offset, and limit",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find first instance of the model matched by filter from the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Locations/update",
+      "operations": [
+        {
+          "method": "POST",
+          "nickname": "Location_updateAll",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "body",
+              "name": "data",
+              "description": "An object of model property name/value pairs",
+              "type": "Location",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Update instances of the model matched by where from the data source",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "path": "/Locations/count",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Location_count",
+          "type": "number",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "where",
+              "description": "Criteria to match model instances",
+              "type": "object",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Count instances of the model matched by where from the data source",
+          "notes": "",
+          "format": "double"
+        }
+      ]
+    },
+    {
+      "path": "/Locations/nearby",
+      "operations": [
+        {
+          "method": "GET",
+          "nickname": "Location_nearby",
+          "type": "void",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "here",
+              "description": "geo location (lng & lat)",
+              "type": "GeoPoint",
+              "required": true,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "query",
+              "name": "page",
+              "description": "number of pages (page size=10)",
+              "type": "Number",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType": "query",
+              "name": "max",
+              "description": "max distance in miles",
+              "type": "Number",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "responseMessages": [],
+          "summary": "Find nearby locations around the geo point",
+          "notes": ""
+        }
+      ]
+    }
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "models": {
+    "Location": {
+      "id": "Location",
+      "properties": {
+        "id": {
+          "type": "string",
+          "id": true,
+          "length": 20,
+          "oracle": {
+            "columnName": "ID",
+            "dataType": "VARCHAR2",
+            "dataLength": 20,
+            "nullable": "N"
+          }
+        },
+        "street": {
+          "type": "string",
+          "length": 64,
+          "oracle": {
+            "columnName": "STREET",
+            "dataType": "VARCHAR2",
+            "dataLength": 64,
+            "nullable": "Y"
+          }
+        },
+        "city": {
+          "type": "string",
+          "length": 64,
+          "oracle": {
+            "columnName": "CITY",
+            "dataType": "VARCHAR2",
+            "dataLength": 64,
+            "nullable": "Y"
+          }
+        },
+        "zipcode": {
+          "type": "number",
+          "length": 20,
+          "oracle": {
+            "columnName": "ZIPCODE",
+            "dataType": "VARCHAR2",
+            "dataLength": 20,
+            "nullable": "Y"
+          },
+          "format": "double"
+        },
+        "name": {
+          "type": "string",
+          "length": 32,
+          "oracle": {
+            "columnName": "NAME",
+            "dataType": "VARCHAR2",
+            "dataLength": 32,
+            "nullable": "Y"
+          }
+        },
+        "geo": {
+          "type": "geopoint"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "Inventory": {
+      "id": "Inventory",
+      "properties": {
+        "id": {
+          "type": "string",
+          "id": true,
+          "required": true,
+          "length": 20,
+          "oracle": {
+            "columnName": "ID",
+            "dataType": "VARCHAR2",
+            "dataLength": 20,
+            "nullable": "N"
+          }
+        },
+        "productId": {
+          "type": "string",
+          "required": true,
+          "length": 20,
+          "oracle": {
+            "columnName": "PRODUCT_ID",
+            "dataType": "VARCHAR2",
+            "dataLength": 20,
+            "nullable": "N"
+          }
+        },
+        "locationId": {
+          "type": "string",
+          "required": true,
+          "length": 20,
+          "oracle": {
+            "columnName": "LOCATION_ID",
+            "dataType": "VARCHAR2",
+            "dataLength": 20,
+            "nullable": "N"
+          }
+        },
+        "available": {
+          "type": "number",
+          "length": 22,
+          "oracle": {
+            "columnName": "AVAILABLE",
+            "dataType": "NUMBER",
+            "dataLength": 22,
+            "nullable": "Y"
+          },
+          "format": "double"
+        },
+        "total": {
+          "type": "number",
+          "length": 22,
+          "oracle": {
+            "columnName": "TOTAL",
+            "dataType": "NUMBER",
+            "dataLength": 22,
+            "nullable": "Y"
+          },
+          "format": "double"
+        }
+      },
+      "required": [
+        "id",
+        "productId",
+        "locationId"
+      ]
+    }
+  }
+}
