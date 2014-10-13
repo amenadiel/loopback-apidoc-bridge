@@ -7,9 +7,9 @@ adding an apidocs template to use Loopback's raw resources to create an ApiDocs 
 ### Removal of /client 
 
 The original [loopback-example-app](https://github.com/strongloop/loopback-example-app) includes an example client 
-webpage, but since it just an example, I decided to use that folder as the targer for ApiDocs files and scripts. 
+webpage, but since it doesn't affect the app's logic, I decided to use that folder as the targer for ApiDocs files and scripts. 
 
-That way, there's no need to touch server.js. Instead, the app's fallback path will show the apidocs generated
+That way, there's no need to touch server.js nor its routes. Instead, the app's fallback path will show the apidocs generated
 files when you request http://localhost:3000/.
 
 ### Configure and run the application
