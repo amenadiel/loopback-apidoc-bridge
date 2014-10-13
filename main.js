@@ -79,7 +79,7 @@ require([
 	if (apiProject.template.withGenerator == null) apiProject.template.withGenerator = true;
 
 	$.ajax({
-		url: '/explorer/resources.json',
+		url: 'explorer/resources.json',
 		dataType: 'json'
 	}).done(function (resources) {
 
@@ -89,7 +89,7 @@ require([
 		var EndointArray = []
 		_.each(models, function (model) {
 			var endpoint = $.ajax({
-				url: '/explorer' + model + '.json',
+				url: 'explorer' + model + '.json',
 				dataType: 'json'
 			});
 			EndointArray.push(endpoint);
